@@ -26,11 +26,21 @@ Route::get('buscar/{id}', function ($id) {
 
 Route::get('docente/{id}', function ($id) {
       $c1=4.5;
-      $c2=3.5;
+      $c2=1.5;
       $c3=3.1;
       $c4=4.9;
       $profesor= \App\Profesor::where('id', '=', $id)->get();
-      return view('docente', compact('c1','c2','c3','c4','profesor'));
+      $materias_profesor=\App\materia_profesor::where('idprof', '=', $id)->get();
+      $lista_materias=array();
+      $indice=0;
+      foreach ($materias_profesor as $m) {
+      $x=\App\Materia::where('id', '=', $m->idmat)->get();
+      foreach ($x as $y) {
+      $lista_materias[$indice]=$y;
+       }
+      $indice++;
+      }
+      return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias'));
 });
 
 

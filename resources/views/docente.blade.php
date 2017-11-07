@@ -409,9 +409,13 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 <tr>
   <td align="left">
 
-    <a  ><h4>Estructuras de datos</h4></a>
-    <a  ><h4>Ingeniería de software</h4></a>
-    <a  ><h4>Análisis y diseño orientado a objetos</h4></a>
+
+    <?php
+  foreach ($lista_materias as $l) {
+  echo '<a  ><h4>',$l->nombre,'</h4></a>';
+
+  }
+    ?>
 
   </td>
 
