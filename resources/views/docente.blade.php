@@ -409,7 +409,6 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 <tr>
   <td align="left">
 
-
     <?php
   foreach ($lista_materias as $l) {
   echo '<a  ><h4>',$l->nombre,'</h4></a>';
