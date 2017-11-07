@@ -28,7 +28,7 @@
             <div class="bs-component">
               <center>
 
-              <h2>Asigxnaturas</h2>
+              <h2>Asignaturas</h2>
 
               </center>
 
