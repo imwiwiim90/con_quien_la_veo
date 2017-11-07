@@ -101,7 +101,7 @@
 
                 <tr>
                 <td><h3>Anabel Montero</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary " href="/docente/01">Consultar</a></td>
+                <td align="right"><br><a class="btn btn-primary " href="/docente/1">Consultar</a></td>
                 </tr>
                 <td><h3>Leonardo Flórez</h3>Departamento de ingeniería de sistemas</td>
                 <td align="right"><br><a class="btn btn-primary">Consultar</a></td>

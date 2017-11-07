@@ -29,7 +29,8 @@ Route::get('docente/{id}', function ($id) {
       $c2=3.5;
       $c3=3.1;
       $c4=4.9;
-      return view('docente', compact('c1','c2','c3','c4'));
+      $profesor= \App\Profesor::where('id', '=', $id)->get();
+      return view('docente', compact('c1','c2','c3','c4','profesor'));
 });
 
 

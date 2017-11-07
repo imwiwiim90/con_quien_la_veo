@@ -16,6 +16,8 @@
 @if (!Auth::guest())
 
 
+
+
 <div class="jumbotron">
 
 
@@ -24,7 +26,19 @@
 <tbody >
 
 <tr>
-<td><h1>Anabel Montero</h1><h3>Departamento de ingeniería de sistemas</h3>
+
+  @if (count($profesor)==0)
+  <?php
+  header("Location: /");
+  die();
+  ?>
+  @endif
+
+  <?php
+foreach ($profesor as $p) {
+echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
+}
+  ?>
 
 
   <table>
@@ -374,7 +388,14 @@
 <tbody >
 
 <tr>
-<td align="right"><img src="{{ URL::asset('imgs/teacher.jpg') }}" class="img-responsive img-rounded" WIDTH=350 ></td>
+
+  <?php
+foreach ($profesor as $p) {
+echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="data:image/jpeg;base64,'.base64_encode( $p->imagen ).'"/></td>';
+//echo "<img src=", $p->imagen," class=img-responsive img-rounded WIDTH=350 >";
+}
+  ?>
+
 </tr>
 <tr>
 <td><a class="btn btn-primary btn-block" style="WIDTH=350" >Calificar</a></td>
