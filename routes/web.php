@@ -25,7 +25,11 @@ Route::get('buscar/{id}', function ($id) {
 });
 
 Route::get('docente/{id}', function ($id) {
-      return view('docente');
+      $c1=4.5;
+      $c2=3.5;
+      $c3=3.1;
+      $c4=4.9;
+      return view('docente', compact('c1','c2','c3','c4'));
 });
 
 
