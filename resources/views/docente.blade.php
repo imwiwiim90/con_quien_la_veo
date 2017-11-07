@@ -392,7 +392,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
   <?php
 foreach ($profesor as $p) {
 echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="data:image/jpeg;base64,'.base64_encode( $p->imagen ).'"/></td>';
-//echo "<img src=", $p->imagen," class=img-responsive img-rounded WIDTH=350 >";
+
 }
   ?>
 
