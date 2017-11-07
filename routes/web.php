@@ -37,8 +37,9 @@ Route::get('docente/{id}', function ($id) {
       $x=\App\Materia::where('id', '=', $m->idmat)->get();
       foreach ($x as $y) {
       $lista_materias[$indice]=$y;
-       }
       $indice++;
+       }
+
       }
       return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias'));
 });
