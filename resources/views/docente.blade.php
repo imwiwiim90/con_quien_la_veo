@@ -411,7 +411,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 
     <?php
   foreach ($lista_materias as $l) {
-  echo '<a  ><h4>',$l->nombre,'</h4></a>';
+  echo '<a href="/asignatura/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
 
   }
     ?>
