@@ -44,6 +44,11 @@ Route::get('docente/{id}', function ($id) {
       return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias'));
 });
 
+Route::get('/miperfil', function () {
+    $user = Auth::user();
+    return view('perfil_usuario', compact ('user'));
+});
+
 
 
 Auth::routes();

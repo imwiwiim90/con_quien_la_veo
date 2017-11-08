@@ -32,7 +32,7 @@
               <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
                 <ul class="nav navbar-nav">
                   @if (!Auth::guest())
-                  <li><a>{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></li>
+                  <li><a href="/miperfil">{{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></li>
                   @endif
                   <li><a href="/" >Inicio</a></li>
                   <li><a href="/asignaturas" >Lista de asignaturas</a></li>
