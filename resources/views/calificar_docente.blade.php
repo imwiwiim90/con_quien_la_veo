@@ -98,6 +98,22 @@ echo "<center><h1>Calificación de ",$p->nombre,"</h1><h3>Departamento de ",$p->
 
 <label for="comentario">¿Qué comentarios tiene sobre el profesor?</label>
   <textarea class="form-control" rows="5" id="comentario"></textarea>
+<br>
+
+<div class="row">
+   <div class="col-xs-6">
+  <button type="submit"  class="btn btn-primary  btn-block" >
+      Calificar
+  </button>
+</div>
+<div class="col-xs-6">
+  <a class="btn btn-primary  btn-block" href="/docente/{{ Request::route('id') }}" >
+      Cancelar
+  </a>
+</div>
+</div>
+
+
 
 </div>
 </center>
