@@ -29,6 +29,11 @@ Route::get('calificar_docente/{id}', function ($id) {
       return view('calificar_docente', compact('profesor'));
 });
 
+Route::post('calificar_docente/{id}', function ($id) {
+  $profesor= \App\Profesor::where('id', '=', $id)->get();
+      return view('calificar_docente', compact('profesor'));
+});
+
 Route::get('docente/{id}', function ($id) {
       $c1=4.5;
       $c2=1.5;

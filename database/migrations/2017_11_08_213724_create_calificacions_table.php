@@ -18,8 +18,8 @@ class CreateCalificacionsTable extends Migration
             $table->integer('id_calificado');
             $table->integer('id_usuario');
             $table->string('tipo');
-            $table->string('comentario');
-            $table->integer('valoracion');
+            $table->string('comentario')->default("")->nullable(true);
+            $table->integer('valoracion')->default(0);
             $table->float('c1');
             $table->float('c2');
             $table->float('c3');
