@@ -24,6 +24,10 @@ Route::get('buscar/{id}', function ($id) {
       return view('busqueda');
 });
 
+Route::get('calificar_docente/{id}', function ($id) {
+      return view('calificar_docente');
+});
+
 Route::get('docente/{id}', function ($id) {
       $c1=4.5;
       $c2=1.5;
