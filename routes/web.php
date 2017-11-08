@@ -25,7 +25,8 @@ Route::get('buscar/{id}', function ($id) {
 });
 
 Route::get('calificar_docente/{id}', function ($id) {
-      return view('calificar_docente');
+  $profesor= \App\Profesor::where('id', '=', $id)->get();
+      return view('calificar_docente', compact('profesor'));
 });
 
 Route::get('docente/{id}', function ($id) {
