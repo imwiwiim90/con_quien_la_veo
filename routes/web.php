@@ -25,13 +25,19 @@ Route::get('buscar/{id}', function ($id) {
 });
 
 Route::get('calificar_docente/{id}', function ($id) {
+  $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+  $ca=$c->where('id_calificado','=',$id);
+  $calif=$ca->where('tipo','=',"profesor")->get();
   $profesor= \App\Profesor::where('id', '=', $id)->get();
-      return view('calificar_docente', compact('profesor'));
+      return view('calificar_docente', compact('profesor', 'calif'));
 });
 
 Route::post('calificar_docente/{id}', function ($id) {
+  $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+  $ca=$c->where('id_calificado','=',$id);
+  $calif=$ca->where('tipo','=',"profesor")->get();
   $profesor= \App\Profesor::where('id', '=', $id)->get();
-      return view('calificar_docente', compact('profesor'));
+      return view('calificar_docente', compact('profesor', 'calif'));
 });
 
 Route::get('docente/{id}', function ($id) {
