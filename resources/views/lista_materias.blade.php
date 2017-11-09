@@ -25,7 +25,7 @@
         foreach ($materias as $m) {
           echo "<tr>
           <td><h3>",$m->nombre,"</h3>Departamento de ",$m->departamento,"</td>
-          <td align='right'><br><a class='btn btn-primary'>Consultar</a></td>
+          <td align='right'><br><a href='/asignatura/$m->id'class='btn btn-primary'>Consultar</a></td>
           </tr>";
         }
           ?>

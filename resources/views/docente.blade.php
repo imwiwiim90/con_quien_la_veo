@@ -115,7 +115,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 @endif
 
 <td>&nbsp</td>
-<td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{$c1}}/5</h3></td>
+<td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{round($c1, 1, PHP_ROUND_HALF_UP)}}/5</h3></td>
 </tr>
 
 </tbody>
@@ -202,7 +202,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
    @endif
 
  <td>&nbsp</td>
- <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{$c2}}/5</h3></td>
+ <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</h3></td>
  </tr>
 
  </tbody>
@@ -285,7 +285,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
    @endif
 
  <td>&nbsp</td>
- <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{$c3}}/5</h3></td>
+ <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</h3></td>
  </tr>
 
  </tbody>
@@ -366,11 +366,22 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
    @endif
 
  <td>&nbsp</td>
- <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{$c4}}/5</h3></td>
+ <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</h3></td>
  </tr>
+
 
  </tbody>
     </table></td>
+   </tr>
+
+   <tr>
+
+   @if(count($calificaciones)==0)
+     <td><br><h3>No se han registrado calificaciones</h3></td>
+   @else
+     <td><br><h3>Calificaciones registradas: {{count($calificaciones)}} </h3></td>
+   @endif
+
    </tr>
 
  </tbody>
@@ -407,6 +418,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 </tr>
 
 <tr>
+
   <td align="left">
 
     <?php
@@ -419,6 +431,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
   </td>
 
 </tr>
+
 
 
 </tbody>

@@ -41,14 +41,22 @@ Route::post('calificar_docente/{id}', function ($id) {
 });
 
 Route::get('docente/{id}', function ($id) {
-      $c1=4.5;
-      $c2=1.5;
-      $c3=3.1;
-      $c4=4.9;
+
+      $cs=\App\Calificacion::where('id_calificado','=',$id);
+      $calificaciones=$cs->where('tipo','=',"profesor")->get();
+      if(count($calificaciones)!=0){
+            $c1=$calificaciones->avg('c1');
+            $c2=$calificaciones->avg('c2');
+            $c3=$calificaciones->avg('c3');
+            $c4=$calificaciones->avg('c4');
+          }else{
+            $c1=0;$c2=0;$c3=0;$c4=0;
+          }
       $profesor= \App\Profesor::where('id', '=', $id)->get();
       $materias_profesor=\App\materia_profesor::where('idprof', '=', $id)->get();
       $lista_materias=array();
       $indice=0;
+
       foreach ($materias_profesor as $m) {
       $x=\App\Materia::where('id', '=', $m->idmat)->get();
       foreach ($x as $y) {
@@ -60,7 +68,8 @@ Route::get('docente/{id}', function ($id) {
       $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
       $ca=$c->where('id_calificado','=',$id);
       $calif=$ca->where('tipo','=',"profesor")->get();
-      return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias', 'calif'));
+
+      return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias', 'calif', 'calificaciones'));
 });
 
 Route::get('/miperfil', function () {
