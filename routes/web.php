@@ -55,9 +55,12 @@ Route::get('docente/{id}', function ($id) {
       $lista_materias[$indice]=$y;
       $indice++;
        }
-
       }
-      return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias'));
+
+      $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+      $ca=$c->where('id_calificado','=',$id);
+      $calif=$ca->where('tipo','=',"profesor")->get();
+      return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias', 'calif'));
 });
 
 Route::get('/miperfil', function () {
