@@ -464,8 +464,11 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 
 if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
 
- echo '<tr><td><div class="card text-white bg-primary"><div class="card-body"><blockquote class="card-blockquote"><p>',$c->comentario,'</p>
- <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),'</i></footer></blockquote></div></div></td></tr>';
+ echo '<tr><td><div class="card text-white bg-primary"><div class="card-body">
+ <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
+ <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
+ '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=20>',
+ $c->valoracion,'<a href="" style="float:right">Me gusta</a></footer></blockquote></div></div></td></tr>';
 
  }
 
