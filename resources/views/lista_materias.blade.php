@@ -14,7 +14,7 @@
       <h2><b>Lista de asignaturas</b><h2>
       </center>
 
-      <script type= "text/javascript" src="js/tab_divider.js"></script>
+      <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
 
       <div class="col-md-8 col-md-offset-2">
 

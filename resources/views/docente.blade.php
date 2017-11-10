@@ -448,10 +448,48 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  src="d
 
 
 
-   <center><h3>Comentarios</h3></center>
+
+   @if(count($calificaciones)==0)
+
+   @else
+     <center><h3>Comentarios</h3></center><br>
+   @endif
+
+<script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
+   <table class="table" ><tbody id="coments">
+
+   <?php
+ foreach ($calificaciones as $c) {
+ $nombre_usuario= \App\User::where('id', '=', $c->id_usuario)->get();
+
+if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+
+ echo '<tr><td><div class="card text-white bg-primary"><div class="card-body"><blockquote class="card-blockquote"><p>',$c->comentario,'</p>
+ <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),'</i></footer></blockquote></div></div></td></tr>';
+
+ }
+
+ }
+
+   ?>
+
+ </tbody></table>
+
+
+        @if (count($calificaciones)>=5)
+       <div class="col-md-12 text-center" >
+         <ul class="pagination pagination-sm" id="myPager"></ul>
+       </div>
+       @endif
+
+       <script>$('#coments').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+
 
 
 </div>
+
+
+
 
 
 @else
