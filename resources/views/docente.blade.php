@@ -464,7 +464,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 
 if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
 
- echo '<tr><td><div class="card text-white bg-primary" style="border-radius: 15px"><div class="card-body">
+ echo '<tr><td><div class="card text-black bg-ligh border-primary" style="border-radius: 15px"><div class="card-body">
  <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
  <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
  '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=20>',
