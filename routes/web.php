@@ -58,6 +58,22 @@ Route::post('calificar_monitor/{id}', function ($id) {
       return view('calificar_monitor', compact('profesor', 'calif'));
 });
 
+Route::get('calificar_asignatura/{id}', function ($id) {
+  $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+  $ca=$c->where('id_calificado','=',$id);
+  $calif=$ca->where('tipo','=',"materia")->get();
+  $profesor= \App\Materia::where('id', '=', $id)->get();
+      return view('calificar_asignatura', compact('profesor', 'calif'));
+});
+
+Route::post('calificar_asignatura/{id}', function ($id) {
+  $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+  $ca=$c->where('id_calificado','=',$id);
+  $calif=$ca->where('tipo','=',"materia")->get();
+  $profesor= \App\Materia::where('id', '=', $id)->get();
+      return view('calificar_asignatura', compact('profesor', 'calif'));
+});
+
 Route::get('docente/{id}', function ($id) {
 
       $cs=\App\Calificacion::where('id_calificado','=',$id);

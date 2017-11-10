@@ -211,7 +211,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 
    </tr>
    <tr>
-   <td><h4>Nivel de exigencia</h4><table>
+   <td><h4>Justicia en el nivel de exigencia</h4><table>
  <tbody >
 
  <tr>
