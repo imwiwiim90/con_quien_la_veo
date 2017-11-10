@@ -459,15 +459,22 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
    <table class="table" ><tbody id="coments">
 
    <?php
+  $contador=0;
+   foreach ($calificaciones as $c) {
+     if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+       $contador=$contador+1;
+     }
+   }
  foreach ($calificaciones as $c) {
  $nombre_usuario= \App\User::where('id', '=', $c->id_usuario)->get();
 
 if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
 
- echo '<tr><td><div class="card text-black bg-ligh border-primary" style="border-radius: 15px"><div class="card-body">
+ echo '<tr><td><div class="card text-black bg-ligh " style="border-radius: 15px; border-style: solid;
+    border-width: 5px; border-color: #2c3e50;"><div class="card-body">
  <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
- <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
- '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=20>',
+ <footer style="color:black;"><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
+ '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
  $c->valoracion,'<a  class="btn-link" style="float:right" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
 
  $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
@@ -490,7 +497,7 @@ if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
  </tbody></table>
 
 
-        @if (count($calificaciones)>=5)
+        @if ($contador>5)
        <div class="col-md-12 text-center" >
          <ul class="pagination pagination-sm" id="myPager"></ul>
        </div>
