@@ -45,7 +45,7 @@ Route::post('calificar_docente/{id}', function ($id) {
 Route::get('docente/{id}', function ($id) {
 
       $cs=\App\Calificacion::where('id_calificado','=',$id);
-      $calificaciones=$cs->where('tipo','=',"profesor")->get();
+      $calificaciones=$cs->where('tipo','=',"profesor")->orderBy('valoracion', 'DESC')->get();
       if(count($calificaciones)!=0){
             $c1=$calificaciones->avg('c1');
             $c2=$calificaciones->avg('c2');

@@ -470,8 +470,16 @@ if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
  '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=20>',
  $c->valoracion,'<a  class="btn-link" style="float:right" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
 
+ $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
 
- echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';//meter en if
+ if(count($x)==0){
+
+ echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+}
+
+ else{
+   echo'Ya no me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+ }
 
  }
 
