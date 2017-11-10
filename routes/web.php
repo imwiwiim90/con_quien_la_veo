@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('principal');
 });
 
+
+
 Route::get('/asignaturas', function () {
     $materias= \App\Materia::all();
     return view('lista_materias', compact('materias'));
@@ -76,6 +78,8 @@ Route::get('/miperfil', function () {
     $user = Auth::user();
     return view('perfil_usuario', compact ('user'));
 });
+
+Route::get('/like', 'LikeController@like');
 
 
 
