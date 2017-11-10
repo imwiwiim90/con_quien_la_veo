@@ -468,7 +468,7 @@ if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
  <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
  <footer><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
  '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=20>',
- $c->valoracion,'<a  class="btn-link" style="float:right" href=',action("LikeController@like"),'><h4>';
+ $c->valoracion,'<a  class="btn-link" style="float:right" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
 
 
  echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';//meter en if

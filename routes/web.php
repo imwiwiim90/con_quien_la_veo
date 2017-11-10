@@ -79,7 +79,7 @@ Route::get('/miperfil', function () {
     return view('perfil_usuario', compact ('user'));
 });
 
-Route::get('/like', 'LikeController@like');
+Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');
 
 
 
