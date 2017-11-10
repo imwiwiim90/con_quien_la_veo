@@ -475,7 +475,7 @@ if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
  <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
  <footer style="color:black;"><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
  '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
- $c->valoracion,'<a  class="btn-link" style="float:right" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
+ $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
 
  $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
 

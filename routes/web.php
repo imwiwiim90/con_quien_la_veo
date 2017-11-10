@@ -77,7 +77,7 @@ Route::get('docente/{id}', function ($id) {
 Route::get('monitor/{id}', function ($id) {
 
       $cs=\App\Calificacion::where('id_calificado','=',$id);
-      $calificaciones=$cs->where('tipo','=',"profesor")->orderBy('valoracion', 'DESC')->get();
+      $calificaciones=$cs->where('tipo','=',"monitor")->orderBy('valoracion', 'DESC')->get();
       if(count($calificaciones)!=0){
             $c1=$calificaciones->avg('c1');
             $c2=$calificaciones->avg('c2');
@@ -86,8 +86,8 @@ Route::get('monitor/{id}', function ($id) {
           }else{
             $c1=0;$c2=0;$c3=0;$c4=0;
           }
-      $profesor= \App\Profesor::where('id', '=', $id)->get();
-      $materias_profesor=\App\materia_profesor::where('idprof', '=', $id)->get();
+      $profesor= \App\Monitor::where('id', '=', $id)->get();
+      $materias_profesor=\App\MateriaMonitor::where('idmon', '=', $id)->get();
       $lista_materias=array();
       $indice=0;
 
@@ -101,7 +101,7 @@ Route::get('monitor/{id}', function ($id) {
 
       $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
       $ca=$c->where('id_calificado','=',$id);
-      $calif=$ca->where('tipo','=',"profesor")->get();
+      $calif=$ca->where('tipo','=',"monitor")->get();
 
       return view('monitor', compact('c1','c2','c3','c4','profesor', 'lista_materias', 'calif', 'calificaciones'));
 });
