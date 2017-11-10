@@ -36,7 +36,7 @@
 
   <?php
 foreach ($profesor as $p) {
-echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
+echo "<td><h1>",$p->nombre,"</h1><h3>Estudiante de ",$p->departamento,"</h3>";
 }
   ?>
 
@@ -211,7 +211,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 
    </tr>
    <tr>
-   <td><h4>Nivel de exigencia</h4><table>
+   <td><h4>Trato con los estudiantes</h4><table>
  <tbody >
 
  <tr>
@@ -409,7 +409,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 
 </tr>
 <tr>
-<td><a href="/calificar_docente/{{ Request::route('id') }}" class="btn btn-primary btn-block" style="WIDTH=350" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a></td>
+<td><a href="/calificar_monitor/{{ Request::route('id') }}" class="btn btn-primary btn-block" style="WIDTH=350" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a></td>
 </tr>
 <tr>
 
@@ -475,7 +475,7 @@ if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
  <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
  <footer style="color:black;"><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
  '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
- $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_p/',$c->id,'/',Auth::id() ,'"><h4>';
+ $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_m/',$c->id,'/',Auth::id() ,'"><h4>';
 
  $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
 

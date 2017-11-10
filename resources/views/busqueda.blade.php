@@ -148,7 +148,7 @@
 
                 <tr>
                 <td><h3>Felipe Jiménez</h3>Ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
+                <td align="right"><br><a class="btn btn-primary" href="/monitor/1">Consultar</a></td>
                 </tr>
                 <td><h3>Juan Pablo Suárez</h3>Ingeniería Industrial</td>
                 <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
