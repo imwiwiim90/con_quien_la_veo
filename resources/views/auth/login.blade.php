@@ -41,7 +41,7 @@
             <div class="jumbotron">
 
               <center>
-              <img src="imgs/logo_banner_t.png" class="img-responsive">
+              <img src="{{ URL::asset('imgs/logo_banner_t_p.png') }}" class="img-responsive">
             </center><br><br>
 
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

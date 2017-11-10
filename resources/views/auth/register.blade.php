@@ -42,7 +42,7 @@
             <div class="jumbotron">
 
               <center>
-              <img src="imgs/logo_banner_t.png" class="img-responsive">
+              <img src="{{ URL::asset('imgs/logo_banner_t_p.png') }}" class="img-responsive">
               <h3><b>Registro</b></h3>
             </center><br><br>
 

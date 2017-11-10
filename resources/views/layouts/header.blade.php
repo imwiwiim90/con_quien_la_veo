@@ -15,9 +15,9 @@
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
             <center>
-            <img src="{{ URL::asset('imgs/logo_banner_t.png') }}" WIDTH=300 style="margin:15px"   >
+            <img src="{{ URL::asset('imgs/logo_banner_t_p.png') }}" WIDTH=300 style="margin:15px"   >
           </center>
-        
+
           <nav class="navbar navbar-default " >
             <div class="container-fluid" >
               <div class="navbar-header">
