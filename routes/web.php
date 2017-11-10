@@ -90,6 +90,11 @@ Route::get('docente/{id}', function ($id) {
       return view('docente', compact('c1','c2','c3','c4','profesor', 'lista_materias', 'calif', 'calificaciones'));
 });
 
+Route::get('asignatura/{id}', function ($id) {
+
+  return view('materia');
+});
+
 Route::get('monitor/{id}', function ($id) {
 
       $cs=\App\Calificacion::where('id_calificado','=',$id);
