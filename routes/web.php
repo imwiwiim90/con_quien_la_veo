@@ -107,8 +107,8 @@ Route::get('docente/{id}', function ($id) {
 });
 
 Route::get('asignatura/{id}', function ($id) {
-
-  return view('materia');
+  $profesor= \App\Materia::where('id', '=', $id)->get();
+  return view('materia',  compact('profesor'));
 });
 
 Route::get('monitor/{id}', function ($id) {

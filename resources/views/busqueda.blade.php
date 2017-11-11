@@ -56,23 +56,6 @@
                 <td><h3>Introducción a la ingeniería de sistemas</h3>Departamento de ingeniería de sistemas</td>
                 <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
                 </tr>
-                <tr>
-                <td><h3>Sistemas de información</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Comunicaciones y redes</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Sistemas operativos</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Ingeniería de software</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-
                 </tbody>
                </table>
 
@@ -114,10 +97,6 @@
                 <td><h3>Miguel Torres</h3>Departamento de ingeniería de sistemas</td>
                 <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
                 </tr>
-                <tr>
-                <td><h3>Julio Carreño</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
 
                 </tbody>
                </table>
@@ -136,11 +115,8 @@
 
           <div class="col-lg-4">
             <div class="bs-component">
-              <center>
 
-              <h2>Monitores</h2>
-
-              </center>
+              <center><h2>Monitores</h2></center>
 
 
               <table class="table" >
