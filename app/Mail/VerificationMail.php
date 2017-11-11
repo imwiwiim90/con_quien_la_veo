@@ -28,6 +28,7 @@ class VerificationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('imwiwiim90@gmail.com')
+                    ->view('VerificationMail');
     }
 }
