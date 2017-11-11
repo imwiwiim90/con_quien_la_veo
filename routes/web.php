@@ -107,8 +107,18 @@ Route::get('docente/{id}', function ($id) {
 });
 
 Route::get('asignatura/{id}', function ($id) {
+  $cs=\App\Calificacion::where('id_calificado','=',$id);
+  $calificaciones=$cs->where('tipo','=',"materia")->orderBy('valoracion', 'DESC')->get();
+  if(count($calificaciones)!=0){
+        $c1=$calificaciones->avg('c1');
+        $c2=$calificaciones->avg('c2');
+        $c3=$calificaciones->avg('c3');
+        $c4=$calificaciones->avg('c4');
+      }else{
+        $c1=0;$c2=0;$c3=0;$c4=0;
+      }
   $profesor= \App\Materia::where('id', '=', $id)->get();
-  return view('materia',  compact('profesor'));
+  return view('materia',  compact('c1','c2','c3','c4','profesor'));
 });
 
 Route::get('monitor/{id}', function ($id) {
