@@ -32,14 +32,6 @@
 
       </div>
 
-      <div class="jumbotron">
-
-      </div>
-
-      <div class="jumbotron">
-
-      </div>
-
       @else
 
       <div class="bs-component "  >

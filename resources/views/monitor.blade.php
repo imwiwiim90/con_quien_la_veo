@@ -421,12 +421,9 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 
   <td align="left">
 
-    <?php
-  foreach ($lista_materias as $l) {
+<?php foreach ($lista_materias as $l) {
   echo '<a href="/asignatura/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
-
-  }
-    ?>
+  }  ?>
 
   </td>
 

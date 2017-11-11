@@ -121,17 +121,23 @@
            @endif
 
            <h3>Nivel de exigencia </h3>
-           @if ($c3>=4)<h2 style="color:#c0392b;"><b>{{$c3}}/5</b>&nbsp&nbspMuy Exigente</h2>
-           @elseif ($c3>=3&&$c3<4)<h2 style="color:#e74c3c;"><b>{{$c3}}/5</b>&nbsp&nbspExigente</h2>
-           @elseif ($c3>=2&&$c3<3)<h2 style="color:#d35400;"><b>{{$c3}}/5</b>&nbsp&nbspRegular</h2>
-           @elseif ($c3>=0&&$c3<2)<h2 style="color:#27ae60;"><b>{{$c3}}/5</b>&nbsp&nbspPoco exigente</h2>
+           @if ($c4>=4)<h2 style="color:#c0392b;"><b>{{$c4}}/5</b>&nbsp&nbspMuy Exigente</h2>
+           @elseif ($c4>=3&&$c4<4)<h2 style="color:#e74c3c;"><b>{{$c4}}/5</b>&nbsp&nbspExigente</h2>
+           @elseif ($c4>=2&&$c4<3)<h2 style="color:#d35400;"><b>{{$c4}}/5</b>&nbsp&nbspRegular</h2>
+           @elseif ($c4>=0&&$c4<2)<h2 style="color:#27ae60;"><b>{{$c4}}/5</b>&nbsp&nbspPoco exigente</h2>
            @endif
 
            <h3>Nota promedio</h3>
-           @if ($c4>=4)<h2 style="color:#27ae60;"><b>{{$c4}}/5</b>&nbsp&nbspMuy Alta</h2>
-           @elseif ($c2>=4&&$c4<4)<h2 style="color:#d35400;"><b>{{$c4}}/5</b>&nbsp&nbspAlta</h2>
-           @elseif ($c4>=2&&$c4<3)<h2 style="color:#e74c3c;"><b>{{$c4}}/5</b>&nbsp&nbspBaja</h2>
-           @elseif ($c4>=0&&$c4<2)<h2 style="color:#c0392b;"><b>{{$c4}}/5</b>&nbsp&nbspMuy baja</h2>
+           @if ($c3>=4)<h2 style="color:#27ae60;"><b>{{$c3}}/5</b>&nbsp&nbspMuy Alta</h2>
+           @elseif ($c3>=4&&$c3<4)<h2 style="color:#d35400;"><b>{{$c3}}/5</b>&nbsp&nbspAlta</h2>
+           @elseif ($c3>=2&&$c3<3)<h2 style="color:#e74c3c;"><b>{{$c3}}/5</b>&nbsp&nbspBaja</h2>
+           @elseif ($c3>=0&&$c3<2)<h2 style="color:#c0392b;"><b>{{$c3}}/5</b>&nbsp&nbspMuy baja</h2>
+           @endif
+
+           @if(count($calificaciones)==0)
+             <h3>No se han registrado calificaciones</h3>
+           @else
+             <h3>Calificaciones registradas: {{count($calificaciones)}} </h3>
            @endif
 
         </div>
@@ -142,6 +148,10 @@
 
 <center><h2>Profesores</h2></center>
 
+<?php foreach ($lista_profesores as $l) {
+  echo '<a href="/docente/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
+  }  ?>
+
       </div>
     </div>
 
@@ -149,6 +159,10 @@
         <div class="bs-component">
 
 <center><h2>Monitores</h2></center>
+
+<?php foreach ($lista_monitores as $l) {
+  echo '<a href="/monitor/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
+  }  ?>
 
         </div>
       </div>

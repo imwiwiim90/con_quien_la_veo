@@ -118,7 +118,36 @@ Route::get('asignatura/{id}', function ($id) {
         $c1=0;$c2=0;$c3=0;$c4=0;
       }
   $profesor= \App\Materia::where('id', '=', $id)->get();
-  return view('materia',  compact('c1','c2','c3','c4','profesor'));
+
+  $materias_profesor=\App\materia_profesor::where('idmat', '=', $id)->get();
+  $lista_profesores=array();
+  $indice=0;
+
+  foreach ($materias_profesor as $m) {
+  $x=\App\Profesor::where('id', '=', $m->idprof)->get();
+  foreach ($x as $y) {
+  $lista_profesores[$indice]=$y;
+  $indice++;
+   }
+  }
+
+  $materias_monitor=\App\MateriaMonitor::where('idmat', '=', $id)->get();
+  $lista_monitores=array();
+  $indice=0;
+
+  foreach ($materias_monitor as $m) {
+  $x1=\App\Monitor::where('id', '=', $m->idmon)->get();
+  foreach ($x1 as $y) {
+  $lista_monitores[$indice]=$y;
+  $indice++;
+   }
+  }
+
+  $c=\App\Calificacion::where('id_usuario', '=', Auth::id());
+  $ca=$c->where('id_calificado','=',$id);
+  $calif=$ca->where('tipo','=',"materia")->get();
+
+  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones'));
 });
 
 Route::get('monitor/{id}', function ($id) {
