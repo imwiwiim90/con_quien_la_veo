@@ -127,6 +127,13 @@
            @elseif ($c3>=0&&$c3<2)<h2 style="color:#27ae60;"><b>{{$c3}}/5</b>&nbsp&nbspPoco exigente</h2>
            @endif
 
+           <h3>Nota promedio</h3>
+           @if ($c4>=4)<h2 style="color:#27ae60;"><b>{{$c4}}/5</b>&nbsp&nbspMuy Alta</h2>
+           @elseif ($c2>=4&&$c4<4)<h2 style="color:#d35400;"><b>{{$c4}}/5</b>&nbsp&nbspAlta</h2>
+           @elseif ($c4>=2&&$c4<3)<h2 style="color:#e74c3c;"><b>{{$c4}}/5</b>&nbsp&nbspBaja</h2>
+           @elseif ($c4>=0&&$c4<2)<h2 style="color:#c0392b;"><b>{{$c4}}/5</b>&nbsp&nbspMuy baja</h2>
+           @endif
+
         </div>
       </div>
 
