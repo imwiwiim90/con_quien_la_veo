@@ -22,7 +22,7 @@
 
   <?php
   foreach ($profesor as $p) {
-  echo "<td><h1>",$p->nombre,"</h1><h3>Dictada por el Departamento de ",$p->departamento,"</h3>";
+  echo "<center><b style='font-size:48;'>",$p->nombre,"</b><h3>Dictada por el Departamento de ",$p->departamento,"</h3></center><br>";
   }
   ?>
 
@@ -31,6 +31,101 @@
       <div class="col-lg-4">
         <div class="bs-component">
 
+          <h3>Calificación general</h3>
+          <table>
+        <tbody >
+
+        <tr>
+
+        @if ($c1<0.4)
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=0.4&&$c1<0.9)
+        <td><img src="{{ URL::asset('imgs/star_half.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=0.9&&$c1<1.4)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=1.4&&$c1<1.9)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_half.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=1.9&&$c1<2.4)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=2.4&&$c1<2.9)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_half.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=2.9&&$c1<3.4)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=3.4&&$c1<3.9)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_half.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=3.9&&$c1<4.4)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_empty.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=4.4&&$c1<4.9)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star_half.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @elseif ($c1>=4.9)
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        <td><img src="{{ URL::asset('imgs/star.png') }}" class="img-responsive" WIDTH=40 ></td>
+        @endif
+
+        <td>&nbsp</td>
+        <td align="right"><h3 style="text-align: justify; font-size: calc(100% + 0.6vw);">{{round($c1, 1, PHP_ROUND_HALF_UP)}}/5</h3></td>
+        </tr>
+
+        </tbody>
+           </table>
+
+           <h3>Nivel de complejidad </h3>
+           @if ($c2>=4)<h2 style="color:#c0392b;"><b>{{$c2}}/5</b>&nbsp&nbspMuy Compleja</h2>
+           @elseif ($c2>=3&&$c2<4)<h2 style="color:#e74c3c;"><b>{{$c2}}/5</b>&nbsp&nbspCompleja</h2>
+           @elseif ($c2>=2&&$c2<3)<h2 style="color:#d35400;"><b>{{$c2}}/5</b>&nbsp&nbspRegular</h2>
+           @elseif ($c2>=1&&$c2<2)<h2 style="color:#27ae60;"><b>{{$c2}}/5</b>&nbsp&nbspSencilla</h2>
+           @elseif ($c2>=0&&$c2<1)<h2 style="color:#2ecc71;"><b>{{$c2}}/5</b>&nbsp&nbspMuy Sencilla</h2>
+           @endif
+
+           <h3>Nivel de exigencia </h3>
+           @if ($c3>=4)<h2 style="color:#c0392b;"><b>{{$c3}}/5</b>&nbsp&nbspMuy Exigente</h2>
+           @elseif ($c3>=3&&$c3<4)<h2 style="color:#e74c3c;"><b>{{$c3}}/5</b>&nbsp&nbspExigente</h2>
+           @elseif ($c3>=2&&$c3<3)<h2 style="color:#d35400;"><b>{{$c3}}/5</b>&nbsp&nbspRegular</h2>
+           @elseif ($c3>=0&&$c3<2)<h2 style="color:#27ae60;"><b>{{$c3}}/5</b>&nbsp&nbspPoco exigente</h2>
+           @endif
 
         </div>
       </div>
