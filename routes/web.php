@@ -156,7 +156,9 @@ Route::get('asignatura/{id}', function ($id) {
   $ca=$c->where('id_calificado','=',$id);
   $calif=$ca->where('tipo','=',"materia")->get();
 
-  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado'));
+  $subs= \App\EstudianteMateria::where('idmat', '=', $id)->where('idest', '=', Auth::id())->get();
+
+  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado', 'subs'));
 });
 
 Route::get('monitor/{id}', function ($id) {
@@ -200,6 +202,7 @@ Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');
 Route::get('/like_m/{idc}/{idu}', 'LikeController@like_m');
 Route::get('/like_a/{idc}/{idu}', 'LikeController@like_a');
 Route::get('/like_i/{idc}/{idu}', 'LikeController@like_i');
+Route::get('/subscribe/{idc}/{idu}', 'SubscriptionController@subscribe');
 
 // test email
 Route::get('/verification', 'MailController@send');

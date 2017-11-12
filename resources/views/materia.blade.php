@@ -184,7 +184,7 @@
             <div class="col-lg-4">
               <div class="bs-component">
                 <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a>
-                <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Suscribirme";}else{echo "Cancelar suscripción";} ?></a>
+                <a href="/subscribe/{{Request::route('id')}}/{{Auth::id()}}" class="btn btn-primary btn-block" ><?php if(count($subs)==0){echo "Suscribirme";}else{echo "Cancelar suscripción";} ?></a>
              </div></div>
 
            </div>
