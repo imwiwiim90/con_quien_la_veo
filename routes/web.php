@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('principal');
+  if (!Auth::guest()){
+    $calificaciones=\App\Calificacion::where('tipo','=',"materia")->get();
+  }else{
+    $calificaciones=0;
+  }
+    return view('principal', compact('calificaciones'));
 });
 
 

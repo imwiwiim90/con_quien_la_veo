@@ -24,11 +24,77 @@
 
       @if (!Auth::guest())
 
-      <center>
-      <h2><b>Actividad reciente</b><h2>
-      </center>
+
 
       <div class="jumbotron">
+
+        @if(count($calificaciones)==0)
+        <h2 style="text-align:justify">En esta sección podrás encontrar los últimos
+           comentarios sobre asignaturas de tu interés. Suscribete a alguna
+            asignatura para empezar a ver contenido.<h2>
+        <center><p><a class="btn btn-primary btn-lg" href="/asignaturas">Lista de asignaturas</a></p></center>
+        @else
+        <center>
+        <h2><b>Actividad reciente</b><h2>
+        </center>
+
+        <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
+           <table class="table" ><tbody id="coments">
+
+           <?php
+          $contador=0;
+           foreach ($calificaciones as $c) {
+             if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+               $contador=$contador+1;
+             }
+           }
+         foreach ($calificaciones as $c) {
+         $nombre_usuario= \App\User::where('id', '=', $c->id_usuario)->get();
+         $nombre_materia= \App\Materia::where('id', '=', $c->id_calificado)->get();
+
+        if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+
+         echo '<tr><td><div class="card text-black bg-ligh " style="border-radius: 15px; border-style: solid;
+         border-width: 5px; border-color: #2c3e50;"><div class="card-body">
+         <blockquote class="card-blockquote">',$nombre_usuario[0]->name,'  >
+         <a href="/asignatura/',$nombre_materia[0]->id,'">',
+         $nombre_materia[0]->nombre,'</a><br><br><p>',$c->comentario,'</p>
+         <footer style="color:black;"><i>',$c->updated_at->format("d-m-Y"),
+         '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
+         $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_i/',$c->id,'/',Auth::id() ,'"><h4>';
+
+         $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
+
+         if(count($x)==0){
+
+         echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+        }
+
+         else{
+           echo'Ya no me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+         }
+
+         }
+
+         }
+
+           ?>
+
+         </tbody></table>
+
+
+                @if ($contador>5)
+               <div class="col-md-12 text-center" >
+                 <ul class="pagination pagination-sm" id="myPager"></ul>
+               </div>
+               @endif
+
+               <script>$('#coments').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+
+
+        @endif
+
+
 
       </div>
 
