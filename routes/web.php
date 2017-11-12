@@ -29,7 +29,10 @@ Route::get('/asignaturas', function () {
 });
 
 Route::get('buscar/{id}', function ($id) {
-      return view('busqueda');
+  $materias= \App\Materia::all();
+  $monitores= \App\Monitor::all();
+  $profesores= \App\Profesor::all();
+      return view('busqueda', compact('materias', 'monitores', 'profesores'));
 });
 
 Route::get('calificar_docente/{id}', function ($id) {

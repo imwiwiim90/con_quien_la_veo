@@ -37,34 +37,29 @@
               <table class="table" >
                 <tbody id="buscar_materia">
 
-                <tr>
-                <td><h3>Análisis y diseño orientado a objetos</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <td><h3>Estructuras de datos</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Bases de datos</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Pensamiento sistémico</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Introducción a la ingeniería de sistemas</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
+                  <?php
+                foreach ($materias as $m) {
+                  echo "<tr>
+                  <td><h3>",$m->nombre,"</h3>Departamento de ",$m->departamento,"</td>
+                  <td align='right'><br><a href='/asignatura/$m->id'class='btn btn-primary'>Consultar</a></td>
+                  </tr>";
+                }
+                if(count($materias)==0){
+                  echo "<h3>No se encontraron resultados de asignaturas.</h3>";
+                }
+
+                  ?>
+
                 </tbody>
                </table>
-
+                @if (count($materias)>5)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager2"></ul>
                  </center>
+                @endif
 
 
-               <script>$('#buscar_materia').pageMe({pagerSelector:'#myPager2',showPrevNext:true,hidePageNumbers:false,perPage:3});</script>
+               <script>$('#buscar_materia').pageMe({pagerSelector:'#myPager2',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
 
 
             </div>
@@ -82,31 +77,31 @@
               <table class="table" >
                 <tbody id="buscar_docente">
 
-                <tr>
-                <td><h3>Anabel Montero</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary " href="/docente/1">Consultar</a></td>
-                </tr>
-                <td><h3>Leonardo Flórez</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Rafael Páez</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Miguel Torres</h3>Departamento de ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
+                  <?php
+                foreach ($profesores as $m) {
+                  echo "<tr>
+                  <td><h3>",$m->nombre,"</h3>Departamento de ",$m->departamento,"</td>
+                  <td align='right'><br><a href='/docente/$m->id'class='btn btn-primary'>Consultar</a></td>
+                  </tr>";
+                }
+                if(count($profesores)==0){
+
+                  echo "<h3>No se encontraron resultados de docentes.</h3>";
+                }
+
+                  ?>
+
 
                 </tbody>
                </table>
-
+                @if (count($profesores)>5)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager3"></ul>
                  </center>
+                 @endif
 
 
-               <script>$('#buscar_docente').pageMe({pagerSelector:'#myPager3',showPrevNext:true,hidePageNumbers:false,perPage:3});</script>
+               <script>$('#buscar_docente').pageMe({pagerSelector:'#myPager3',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
 
 
 
@@ -122,35 +117,29 @@
               <table class="table" >
                 <tbody id="buscar_monitor">
 
-                <tr>
-                <td><h3>Felipe Jiménez</h3>Ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary" href="/monitor/1">Consultar</a></td>
-                </tr>
-                <td><h3>Juan Pablo Suárez</h3>Ingeniería Industrial</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Ana Cristina Macià</h3>Ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Juan Sebastián Gómez</h3>Ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
-                <tr>
-                <td><h3>Camilo Mogollón</h3>Ingeniería de sistemas</td>
-                <td align="right"><br><a class="btn btn-primary">Consultar</a></td>
-                </tr>
+                  <?php
+                foreach ($monitores as $m) {
+                  echo "<tr>
+                  <td><h3>",$m->nombre,"</h3>",$m->departamento,"</td>
+                  <td align='right'><br><a href='/monitor/$m->id'class='btn btn-primary'>Consultar</a></td>
+                  </tr>";
+                }
+                if(count($monitores)==0){
+
+                  echo "<h3>No se encontraron resultados de monitores.</h3>";
+                }
+
+                  ?>
 
                 </tbody>
                </table>
-
+                @if (count($monitores)>5)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager4"></ul>
                  </center>
+                 @endif
 
-
-               <script>$('#buscar_monitor').pageMe({pagerSelector:'#myPager4',showPrevNext:true,hidePageNumbers:false,perPage:3});</script>
+               <script>$('#buscar_monitor').pageMe({pagerSelector:'#myPager4',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
 
             </div>
           </div>
