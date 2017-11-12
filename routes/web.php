@@ -13,7 +13,8 @@
 
 Route::get('/', function () {
   if (!Auth::guest()){
-    $calificaciones=\App\Calificacion::where('tipo','=',"materia")->get();
+    $calificaciones=\App\Calificacion::where('tipo','=',"materia")
+    ->whereIn('id_calificado', \App\EstudianteMateria::where('idest','=',Auth::id())->select('idmat'))->get();
   }else{
     $calificaciones=0;
   }
@@ -163,7 +164,8 @@ Route::get('asignatura/{id}', function ($id) {
 
   $subs= \App\EstudianteMateria::where('idmat', '=', $id)->where('idest', '=', Auth::id())->get();
 
-  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado', 'subs'));
+  return view('materia',
+  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado', 'subs'));
 });
 
 Route::get('monitor/{id}', function ($id) {
