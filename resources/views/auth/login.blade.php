@@ -5,7 +5,7 @@
       <meta charset="utf-8">
         <title>¿Con quién la veo?</title>
     </head>
-    <body style="background-image:url(imgs/fondo.jpg)">
+    <body style="background-image:url({{ URL::asset('imgs/fondo.jpg') }})">
 
 
       <div class="bs-component "  >
@@ -20,7 +20,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <img src="imgs/logo_transparente.png" WIDTH=50 >
+            <img src="{{ URL::asset('imgs/logo_transparente.png') }}" WIDTH=50 >
           </div>
           <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
             <ul class="nav navbar-nav">
