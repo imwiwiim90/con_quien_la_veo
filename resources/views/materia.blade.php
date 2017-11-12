@@ -169,6 +169,66 @@
 
       </div>
 
+      @if(count($calificaciones)==0)
+
+      @else
+        <center><h3>Comentarios</h3></center><br>
+      @endif
+
+   <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
+      <table class="table" ><tbody id="coments">
+
+      <?php
+     $contador=0;
+      foreach ($calificaciones as $c) {
+        if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+          $contador=$contador+1;
+        }
+      }
+    foreach ($calificaciones as $c) {
+    $nombre_usuario= \App\User::where('id', '=', $c->id_usuario)->get();
+
+   if ($c->comentario!=null and $c->comentario!="" and $c->comentario!=" "){
+
+    echo '<tr><td><div class="card text-black bg-ligh " style="border-radius: 15px; border-style: solid;
+       border-width: 5px; border-color: #2c3e50;"><div class="card-body">
+    <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
+    <footer style="color:black;"><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
+    '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
+    $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_a/',$c->id,'/',Auth::id() ,'"><h4>';
+
+    $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
+
+    if(count($x)==0){
+
+    echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+   }
+
+    else{
+      echo'Ya no me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+    }
+
+    }
+
+    }
+
+      ?>
+
+    </tbody></table>
+
+
+           @if ($contador>5)
+          <div class="col-md-12 text-center" >
+            <ul class="pagination pagination-sm" id="myPager"></ul>
+          </div>
+          @endif
+
+          <script>$('#coments').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+
+
+
+   </div>
+
 </div>
 
 @else

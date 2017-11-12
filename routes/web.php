@@ -189,6 +189,8 @@ Route::get('/miperfil', function () {
 
 Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');
 Route::get('/like_m/{idc}/{idu}', 'LikeController@like_m');
+Route::get('/like_a/{idc}/{idu}', 'LikeController@like_a');
+Route::get('/like_i/{idc}/{idu}', 'LikeController@like_i');
 
 // test email
 Route::get('/verification', 'MailController@send');
