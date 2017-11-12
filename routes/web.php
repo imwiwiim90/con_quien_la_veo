@@ -29,9 +29,9 @@ Route::get('/asignaturas', function () {
 });
 
 Route::get('buscar/{id}', function ($id) {
-  $materias= \App\Materia::all();
-  $monitores= \App\Monitor::all();
-  $profesores= \App\Profesor::all();
+  $materias= \App\Materia::where('nombre','like', '%' . $id . '%')->get();
+  $monitores= \App\Monitor::where('nombre','like', '%' . $id . '%')->get();
+  $profesores= \App\Profesor::where('nombre','like', '%' . $id . '%')->get();
       return view('busqueda', compact('materias', 'monitores', 'profesores'));
 });
 

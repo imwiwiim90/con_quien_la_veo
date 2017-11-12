@@ -52,14 +52,14 @@
 
                 </tbody>
                </table>
-                @if (count($materias)>5)
+                @if (count($materias)>4)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager2"></ul>
                  </center>
                 @endif
 
 
-               <script>$('#buscar_materia').pageMe({pagerSelector:'#myPager2',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+               <script>$('#buscar_materia').pageMe({pagerSelector:'#myPager2',showPrevNext:true,hidePageNumbers:false,perPage:4});</script>
 
 
             </div>
@@ -94,14 +94,14 @@
 
                 </tbody>
                </table>
-                @if (count($profesores)>5)
+                @if (count($profesores)>4)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager3"></ul>
                  </center>
                  @endif
 
 
-               <script>$('#buscar_docente').pageMe({pagerSelector:'#myPager3',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+               <script>$('#buscar_docente').pageMe({pagerSelector:'#myPager3',showPrevNext:true,hidePageNumbers:false,perPage:4});</script>
 
 
 
@@ -133,13 +133,13 @@
 
                 </tbody>
                </table>
-                @if (count($monitores)>5)
+                @if (count($monitores)>4)
                  <center>
                  <ul class="pagination pagination-sm" id="myPager4"></ul>
                  </center>
                  @endif
 
-               <script>$('#buscar_monitor').pageMe({pagerSelector:'#myPager4',showPrevNext:true,hidePageNumbers:false,perPage:5});</script>
+               <script>$('#buscar_monitor').pageMe({pagerSelector:'#myPager4',showPrevNext:true,hidePageNumbers:false,perPage:4});</script>
 
             </div>
           </div>
