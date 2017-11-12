@@ -409,7 +409,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 
 </tr>
 <tr>
-<td><a href="/calificar_monitor/{{ Request::route('id') }}" class="btn btn-primary btn-block" style="WIDTH=350" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a></td>
+<td><a href="/calificar_monitor/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a></td>
 </tr>
 <tr>
 

@@ -1,6 +1,7 @@
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('imgs/logo_transparente.png') }}" />
       <meta charset="utf-8">
         <title>¿Con quién la veo?</title>
     </head>

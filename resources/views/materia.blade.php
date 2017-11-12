@@ -172,8 +172,6 @@
 
       <div class="row">
 
-          <div class="col-lg-4">
-            <div class="bs-component">
 
 
            </div></div>
@@ -181,10 +179,16 @@
              <div class="bs-component">
 
             </div></div>
-            <div class="col-lg-4">
-              <div class="bs-component">
-                <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a>
-                <a href="/subscribe/{{Request::route('id')}}/{{Auth::id()}}" class="btn btn-primary btn-block" ><?php if(count($subs)==0){echo "Suscribirme";}else{echo "Cancelar suscripción";} ?></a>
+            <div class="col-xs-6">
+              <div class="bs-component" style="float:right">
+
+                <a href="/subscribe/{{Request::route('id')}}/{{Auth::id()}}" class="btn btn-primary"  style="width:200" >
+                  <?php if(count($subs)==0){echo "Suscribirme";}else{echo "Cancelar suscripción";} ?></a>&nbsp&nbsp
+
+                <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary " style="width:200">
+                  <?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a>
+
+
              </div></div>
 
            </div>
