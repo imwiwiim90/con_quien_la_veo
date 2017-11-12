@@ -173,9 +173,7 @@
       <div class="row">
 
 
-
-           </div></div>
-           <div class="col-lg-4">
+           <div class="col-xs-6">
              <div class="bs-component">
 
             </div></div>
@@ -222,6 +220,7 @@
     $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_a/',$c->id,'/',Auth::id() ,'"><h4>';
 
     $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
+
 
     if(count($x)==0){
 
