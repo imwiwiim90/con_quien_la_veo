@@ -134,12 +134,6 @@
            @elseif ($c3>=0&&$c3<2)<h2 style="color:#c0392b;"><b>{{$c3}}/5</b>&nbsp&nbspMuy baja</h2>
            @endif
 
-           @if(count($calificaciones)==0)
-             <h3>No se han registrado calificaciones</h3>
-           @else
-             <h3>Calificaciones registradas: {{count($calificaciones)}} </h3>
-           @endif
-
         </div>
       </div>
 
@@ -166,20 +160,39 @@
 @if(count($lista_monitores)==0)
 <h3>No hay monitores registrados para esta asignatura</h3>
 @endif
-
+<ul>
 <?php foreach ($lista_monitores as $l) {
-  echo '<a href="/monitor/',$l->id,'" ><h3>',$l->nombre,'</h3></a>';
-  }  ?>
+  echo '<li><a href="/monitor/',$l->id,'" ><h3>',$l->nombre,'</h3></a></li>';
+}  ?></ul>
 
         </div>
       </div>
 
       </div>
 
-      @if(count($calificaciones)==0)
+      <div class="row">
 
+          <div class="col-lg-4">
+            <div class="bs-component">
+
+
+           </div></div>
+           <div class="col-lg-4">
+             <div class="bs-component">
+
+            </div></div>
+            <div class="col-lg-4">
+              <div class="bs-component">
+                <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Calificar";}else{echo "Actualizar Calificación";} ?></a>
+                <a href="/calificar_asignatura/{{ Request::route('id') }}" class="btn btn-primary btn-block" ><?php if(count($calif)==0){echo "Suscribirme";}else{echo "Cancelar suscripción";} ?></a>
+             </div></div>
+
+           </div>
+
+      @if(count($calificaciones)==0)
+        <br><center><h3>No se han registrado calificaciones</h3></center>
       @else
-        <center><h3>Comentarios</h3></center><br>
+        <br><center><h3>Comentarios</h3></center><br>
       @endif
 
    <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
@@ -235,6 +248,7 @@
 
 
    </div>
+
 
 </div>
 
