@@ -147,10 +147,13 @@
         <div class="bs-component">
 
 <center><h2>Profesores</h2></center>
-
+<ul>
 <?php foreach ($lista_profesores as $l) {
-  echo '<a href="/docente/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
-  }  ?>
+  echo '<li><a href="/docente/',$l->id,'" ><h3>',$l->nombre,'</h3></a></li>';
+}  ?></ul>
+
+<center><h2>Profesor recomendado</h2></center>
+<center><a href="/docente/{{$recomendado->id}}"><h2>{{$recomendado->nombre}}</h2></a></center>
 
       </div>
     </div>
@@ -160,8 +163,12 @@
 
 <center><h2>Monitores</h2></center>
 
+@if(count($lista_monitores)==0)
+<h3>No hay monitores registrados para esta asignatura</h3>
+@endif
+
 <?php foreach ($lista_monitores as $l) {
-  echo '<a href="/monitor/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
+  echo '<a href="/monitor/',$l->id,'" ><h3>',$l->nombre,'</h3></a>';
   }  ?>
 
         </div>

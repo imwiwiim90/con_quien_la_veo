@@ -122,13 +122,22 @@ Route::get('asignatura/{id}', function ($id) {
   $materias_profesor=\App\materia_profesor::where('idmat', '=', $id)->get();
   $lista_profesores=array();
   $indice=0;
+  $acumulador=0;
+  $recomendado= new \App\Profesor;
 
   foreach ($materias_profesor as $m) {
   $x=\App\Profesor::where('id', '=', $m->idprof)->get();
-  foreach ($x as $y) {
-  $lista_profesores[$indice]=$y;
+
+  $cs1=\App\Calificacion::where('id_calificado','=',$x[0]->id);
+  $calificaciones1=$cs1->where('tipo','=',"profesor");
+  if($calificaciones1->avg('c1')>$acumulador){
+    $acumulador=$calificaciones1->avg('c1');
+    $recomendado=$x[0];
+  }
+
+  $lista_profesores[$indice]=$x[0];
   $indice++;
-   }
+
   }
 
   $materias_monitor=\App\MateriaMonitor::where('idmat', '=', $id)->get();
@@ -147,7 +156,7 @@ Route::get('asignatura/{id}', function ($id) {
   $ca=$c->where('id_calificado','=',$id);
   $calif=$ca->where('tipo','=',"materia")->get();
 
-  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones'));
+  return view('materia',  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado'));
 });
 
 Route::get('monitor/{id}', function ($id) {
