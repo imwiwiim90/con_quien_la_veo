@@ -9,17 +9,31 @@ use Illuminate\Http\Request;
 use App\Mail\VerificationMail;
 use App\UnverifiedUser;
 use App\User;
+use Validator;
 
 class EmailVerificationController extends Controller
 {
     public function sendVerificationEmail(Request $request) {
 
-    	// validate form data
-    	$this->validate($request,[
-    		'name' => 'required',
-    		'email' => 'required',
-    		'password' => 'required|same:password_confirmation',
-    	]);
+        // validate form data
+        // error validation messages
+        $error_messages = [
+            'same' => 'Las contraseñas no coinciden',
+            'regex' => 'El correo debe ser institucional',
+            'email' => 'Este campo debe ser un correo válido'
+        ];
+        // validation logic
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|regex:/.*@javeriana\.edu\.co/',
+            'password' => 'required|same:password_confirmation',
+        ],$error_messages);
+        // test validation 
+        if ($validator->fails()) {
+            return redirect('register')
+            ->withErrors($validator)
+            ->withInput();
+        }
 
     	// find an existing email and delete it
     	$unverifiedUser = UnverifiedUser::where('email',$request->email)->first();
