@@ -11,6 +11,8 @@ use App\UnverifiedUser;
 use App\User;
 use Validator;
 
+// correo no debe estar repetido
+
 class EmailVerificationController extends Controller
 {
     public function sendVerificationEmail(Request $request) {
@@ -20,13 +22,15 @@ class EmailVerificationController extends Controller
         $error_messages = [
             'same' => 'Las contraseñas no coinciden',
             'regex' => 'El correo debe ser institucional',
-            'email' => 'Este campo debe ser un correo válido'
+            'email' => 'Este campo debe ser un correo válido',
+            'min' => 'La contraseña debe ser minimo de 6 digitos',
+            'unique' => 'El correo ya está en uso',
         ];
         // validation logic
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|regex:/.*@javeriana\.edu\.co/',
-            'password' => 'required|same:password_confirmation',
+            'email' => 'required|email|regex:/.*@javeriana\.edu\.co/|unique:users,email',
+            'password' => 'required|same:password_confirmation|min:6',
         ],$error_messages);
         // test validation 
         if ($validator->fails()) {
