@@ -205,7 +205,9 @@ Route::get('monitor/{id}', function ($id) {
 
 Route::get('/miperfil', function () {
     $user = Auth::user();
-    return view('perfil_usuario', compact ('user'));
+    $materias_est = \App\EstudianteMateria::all();
+    $materias = \App\Materia::all();
+    return view('perfil_usuario', compact ('user', 'materias_est', 'materias'));
 });
 
 Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');

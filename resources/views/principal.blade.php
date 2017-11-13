@@ -139,7 +139,7 @@
          <div class="row">
             <div class="col-xs-6">
                 <br>
-                <h3 style="text-align: justify; font-size: calc(100% + 0.95vw);" >Bienvenido al sistema de consulta, calificación y recomendación de profesores, monitores y asignaturas para tu universidad.</h2>
+                <h4 style="text-align: justify; font-size: calc(100% + 0.95vw);" >Bienvenido al sistema de consulta, calificación y recomendación de profesores, monitores y asignaturas para tu universidad.</h4>
 
             </div>
             <div class="col-xs-6">
