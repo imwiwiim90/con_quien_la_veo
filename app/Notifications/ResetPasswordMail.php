@@ -1,18 +1,23 @@
 <?php
 
-namespace Illuminate\Auth\Notifications;
+namespace App\Notifications;
 
+use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class ResetPasswordMail extends Notification
 {
+    use Queueable;
     /**
      * The password reset token.
      *
      * @var string
      */
     public $token;
+
+
 
     /**
      * Create a notification instance.
@@ -44,8 +49,7 @@ class ResetPasswordMail extends Notification
      */
     public function toMail($notifiable)
     {
-        return $this->from('Con Quien La Veo')
-                    ->view('ResetPasswordMail');
+        return (new MailMessage)->view('ResetPasswordMail', ['token' => $this->token,]);
 
         //return (new MailMessage)
           //  ->line('You are receiving this email because we received a password reset request for your account.')
