@@ -6,7 +6,7 @@ color: inherit;">¡Hola!</h1>
 <h3 style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 font-weight: 400;
 line-height: 1.1;
-color: inherit;">Estás recibiendo este mensaje porque recibimos una solicitud de restablecimiento de tu constraseña.</h3>
+color: inherit;">Estás recibiendo este mensaje porque recibimos una solicitud de restablecimiento de tu contraseña.</h3>
 <h3 style="font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 font-weight: 400;
 line-height: 1.1;
