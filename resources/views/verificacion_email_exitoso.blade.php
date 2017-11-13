@@ -15,7 +15,7 @@
       <br><br><br><br>
       <div class="jumbotron">
         <center>
-        <img src="imgs/logo_banner_t_p_slogan.png" class="img-responsive">
+        <img src="{{ URL::asset('imgs/logo_banner_t_p_slogan.png') }}" class="img-responsive">
       </center>
 
 
@@ -28,7 +28,7 @@
             </div>
             <div class="col-xs-6">
                 <br> <br>
-                <p><a href="login" class="btn btn-primary btn-lg btn-block">Iniciar sesión</a></p>
+                <p><a href="/login" class="btn btn-primary btn-lg btn-block">Iniciar sesión</a></p>
             </div>
           </div>
       </div>

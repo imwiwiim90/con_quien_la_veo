@@ -33,6 +33,6 @@ class VerificationMail extends Mailable
                     ->with([
                         'token' => $this->token,
                         'id' => $this->unverifiedUserId,
-                    ]);
+                    ])->subject('Verificar tu cuenta');
     }
 }

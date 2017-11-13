@@ -131,7 +131,7 @@
       <br><br><br><br><br><br>
       <div class="jumbotron">
         <center>
-        <img src="imgs/logo_banner_t_p_slogan.png" class="img-responsive">
+        <img src="{{ URL::asset('imgs/logo_banner_t_p_slogan.png') }}" class="img-responsive">
       </center>
 
 
