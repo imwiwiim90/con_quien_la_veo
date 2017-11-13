@@ -10,6 +10,7 @@ class MailController extends Controller
 {
     //
     public function send(Request $request){
-    	Mail::to('wilsondaniel95@hotmail.com')->send(new VerificationMail());
+    	Mail::to('pipejotabe@gmail.com')->send(new VerificationMail());
+    	return view('home');
     }
 }
