@@ -215,7 +215,8 @@ Route::get('/like_i/{idc}/{idu}', 'LikeController@like_i');
 Route::get('/subscribe/{idc}/{idu}', 'SubscriptionController@subscribe');
 
 // test email
-Route::get('/verification', 'MailController@send');
+Route::post('/user_register','EmailVerificationController@sendVerificationEmail');
+Route::get('/verify_email/{id}/{token}','EmailVerificationController@verifyEmail');
 
 
 

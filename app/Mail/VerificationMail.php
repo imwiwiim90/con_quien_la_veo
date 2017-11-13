@@ -16,9 +16,10 @@ class VerificationMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id,$token)
     {
-        //
+        $this->token = $token;
+        $this->unverifiedUserId = $id;
     }
 
     /**
@@ -28,7 +29,10 @@ class VerificationMail extends Mailable
      */
     public function build()
     {
-        return $this->from('imwiwiim90@gmail.com')
-                    ->view('VerificationMail');
+        return $this->view('VerificationMail')
+                    ->with([
+                        'token' => $this->token,
+                        'id' => $this->unverifiedUserId,
+                    ]);
     }
 }
