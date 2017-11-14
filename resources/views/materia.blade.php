@@ -113,25 +113,25 @@
            </table>
 
            <h3>Nivel de complejidad </h3>
-           @if ($c2>=4)<h2 style="color:#c0392b;"><b>{{$c2}}/5</b>&nbsp&nbspMuy Compleja</h2>
-           @elseif ($c2>=3&&$c2<4)<h2 style="color:#e74c3c;"><b>{{$c2}}/5</b>&nbsp&nbspCompleja</h2>
-           @elseif ($c2>=2&&$c2<3)<h2 style="color:#d35400;"><b>{{$c2}}/5</b>&nbsp&nbspRegular</h2>
-           @elseif ($c2>=1&&$c2<2)<h2 style="color:#27ae60;"><b>{{$c2}}/5</b>&nbsp&nbspSencilla</h2>
-           @elseif ($c2>=0&&$c2<1)<h2 style="color:#2ecc71;"><b>{{$c2}}/5</b>&nbsp&nbspMuy Sencilla</h2>
+           @if ($c2>=4)<h2 style="color:#c0392b;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Compleja</h2>
+           @elseif ($c2>=3&&$c2<4)<h2 style="color:#e74c3c;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspCompleja</h2>
+           @elseif ($c2>=2&&$c2<3)<h2 style="color:#d35400;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h2>
+           @elseif ($c2>=1&&$c2<2)<h2 style="color:#27ae60;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspSencilla</h2>
+           @elseif ($c2>=0&&$c2<1)<h2 style="color:#2ecc71;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Sencilla</h2>
            @endif
 
            <h3>Nivel de exigencia </h3>
-           @if ($c4>=4)<h2 style="color:#c0392b;"><b>{{$c4}}/5</b>&nbsp&nbspMuy Exigente</h2>
-           @elseif ($c4>=3&&$c4<4)<h2 style="color:#e74c3c;"><b>{{$c4}}/5</b>&nbsp&nbspExigente</h2>
-           @elseif ($c4>=2&&$c4<3)<h2 style="color:#d35400;"><b>{{$c4}}/5</b>&nbsp&nbspRegular</h2>
-           @elseif ($c4>=0&&$c4<2)<h2 style="color:#27ae60;"><b>{{$c4}}/5</b>&nbsp&nbspPoco exigente</h2>
+           @if ($c4>=4)<h2 style="color:#c0392b;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Exigente</h2>
+           @elseif ($c4>=3&&$c4<4)<h2 style="color:#e74c3c;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspExigente</h2>
+           @elseif ($c4>=2&&$c4<3)<h2 style="color:#d35400;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h2>
+           @elseif ($c4>=0&&$c4<2)<h2 style="color:#27ae60;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspPoco exigente</h2>
            @endif
 
            <h3>Nota promedio</h3>
-           @if ($c3>=4)<h2 style="color:#27ae60;"><b>{{$c3}}/5</b>&nbsp&nbspMuy Alta</h2>
-           @elseif ($c3>=4&&$c3<4)<h2 style="color:#d35400;"><b>{{$c3}}/5</b>&nbsp&nbspAlta</h2>
-           @elseif ($c3>=2&&$c3<3)<h2 style="color:#e74c3c;"><b>{{$c3}}/5</b>&nbsp&nbspBaja</h2>
-           @elseif ($c3>=0&&$c3<2)<h2 style="color:#c0392b;"><b>{{$c3}}/5</b>&nbsp&nbspMuy baja</h2>
+           @if ($c3>=4)<h2 style="color:#27ae60;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Alta</h2>
+           @elseif ($c3>=4&&$c3<4)<h2 style="color:#d35400;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspAlta</h2>
+           @elseif ($c3>=2&&$c3<3)<h2 style="color:#e74c3c;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspBaja</h2>
+           @elseif ($c3>=0&&$c3<2)<h2 style="color:#c0392b;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy baja</h2>
            @endif
 
         </div>

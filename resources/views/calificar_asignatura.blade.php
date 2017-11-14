@@ -151,6 +151,12 @@ $cal->valoracion=0;
 $cal->id_usuario=$idusuario;
 
 $cal->save();
+foreach($interesados as $i){
+  $usuario=\App\Usuario::where('id', '=', $i->idest);
+  Mail::to($usuario[0]->email)->send(new VerificationMail($p[0]->nombre,$p[0]->id));
+}
+
+
 }
 else{
   $calif[0]->c1=$c1;
