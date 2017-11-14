@@ -30,15 +30,39 @@
           <td><h4>Departamento</h4></td>
           <td align='right'><h4>{{$user->departamento}}</h4></td>
           </tr>
-           <?php
-           echo  "<tr>
-          <td align='center'><br><a href='/asignatura/1'class='btn btn-primary'>Editar</a></td>
-          <td align='center'><br><a href='/asignatura/1'class='btn btn-primary'>Cancelar</a></td>
-          </tr>";
 
-          ?>
+
+          
+
+
+
         </tbody>
          </table>
+          <div class="row">
+            <div class="col-lg-4">
+            <div class="bs-component">
+
+
+     
+
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="bs-component">
+
+
+            <center><a class="btn btn-primary btn-block" href="/editarperfil" >Editar</a></center>
+
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="bs-component">
+
+
+
+            </div>
+            </div>
+          </div>
 
 </div>
       </div>
@@ -53,14 +77,14 @@
     <center>
       <h3><b>Asignaturas de Interés</b><h3>
       </center>
-
+            @if (count($materias_est) != 0)
 
               <table class="table" >
-        <tbody id="perfil_usuario">
+        <tbody id="perfil_usuario2">
 
           <?php
         foreach ($materias_est as $m) {
-          if($m->idest == $user->id) {
+       
             foreach ($materias as $ma) {
               if ($ma->id == $m->idmat) {
                 echo "<tr>
@@ -70,21 +94,28 @@
               }
             }
             
-          }
+          
         }
           ?>
         </tbody>
                </table>
+               @else 
+
+              <center>
+      <h5><b>Actualmente no se encuentra suscrito a ninguna Asignatura</b><h5>
+      </center>
+
+               @endif
    
 </div>
       </div>
-        @if (count($materias_est)>=3)
+        @if (count($materias_est)>2)
        <div class="col-md-12 text-center" >
          <ul class="pagination pagination-sm" id="myPager"></ul>
        </div>
        @endif
 
-       <script>$('#asignaturas_total').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:3});</script>
+       <script>$('#perfil_usuario2').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:2});</script>
      
 
 
