@@ -146,8 +146,7 @@
   echo '<li><a href="/docente/',$l->id,'" ><h3>',$l->nombre,'</h3></a></li>';
 }  ?></ul>
 
-<center><h2>Profesor recomendado</h2></center>
-<center><a href="/docente/{{$recomendado->id}}"><h2>{{$recomendado->nombre}}</h2></a></center>
+
 
       </div>
     </div>
@@ -190,6 +189,46 @@
              </div></div>
 
            </div>
+
+</div>
+<div class="jumbotron">
+
+<center><h3>Recomendación de Profesores</h3></center><br>
+
+<table class="table" >
+        <tbody id="perfil_usuario">
+
+          <tr>
+          <td><center><h4>Recomendación General</h4></center></td>
+          <td><center><h4>{{$recomendado->nombre}}</h4></center></td>
+          <td><center><a href="/docente/{{$recomendado->id}}" class="btn btn-primary">Consultar Perfil</a></center></td>
+          </tr>
+
+          <tr>
+          <td><center><h4>Mayor objetividad al calificar</h4></center></td>
+          <td><center><h4>{{$recomendado2->nombre}}</h4></center></td>
+          <td><center><a href="/docente/{{$recomendado2->id}}" class="btn btn-primary">Consultar Perfil</a></center></td>
+          </tr>
+
+          <tr>
+          <td><center><h4>Nivel de exigencia más justo</h4></center></td>
+          <td><center><h4>{{$recomendado3->nombre}}</h4></center></td>
+          <td><center><a href="/docente/{{$recomendado3->id}}" class="btn btn-primary">Consultar Perfil</a></center></td>
+          </tr>
+
+          <tr>
+          <td><center><h4>Mayor calidad de enseñanza</h4></center></td>
+          <td><center><h4>{{$recomendado4->nombre}}</h4></center></td>
+          <td><center><a href="/docente/{{$recomendado4->id}}" class="btn btn-primary">Consultar Perfil</a></center></td>
+          </tr>
+
+        </tbody>
+</table>
+
+
+</div>
+
+<div class="jumbotron">
 
       @if(count($calificaciones)==0)
         <br><center><h3>No se han registrado calificaciones</h3></center>

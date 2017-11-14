@@ -133,17 +133,38 @@ Route::get('asignatura/{id}', function ($id) {
   $materias_profesor=\App\materia_profesor::where('idmat', '=', $id)->get();
   $lista_profesores=array();
   $indice=0;
+
   $acumulador=0;
+  $acumulador2=0;
+  $acumulador3=0;
+  $acumulador4=0;
+
   $recomendado= new \App\Profesor;
+  $recomendado2= new \App\Profesor;
+  $recomendado3= new \App\Profesor;
+  $recomendado4= new \App\Profesor;
 
   foreach ($materias_profesor as $m) {
   $x=\App\Profesor::where('id', '=', $m->idprof)->get();
 
   $cs1=\App\Calificacion::where('id_calificado','=',$x[0]->id);
   $calificaciones1=$cs1->where('tipo','=',"profesor");
+
   if($calificaciones1->avg('c1')>$acumulador){
     $acumulador=$calificaciones1->avg('c1');
     $recomendado=$x[0];
+  }
+  if($calificaciones1->avg('c2')>$acumulador2){
+    $acumulador2=$calificaciones1->avg('c2');
+    $recomendado2=$x[0];
+  }
+  if($calificaciones1->avg('c3')>$acumulador3){
+    $acumulador3=$calificaciones1->avg('c3');
+    $recomendado3=$x[0];
+  }
+  if($calificaciones1->avg('c4')>$acumulador4){
+    $acumulador4=$calificaciones1->avg('c4');
+    $recomendado4=$x[0];
   }
 
   $lista_profesores[$indice]=$x[0];
@@ -170,7 +191,7 @@ Route::get('asignatura/{id}', function ($id) {
   $subs= \App\EstudianteMateria::where('idmat', '=', $id)->where('idest', '=', Auth::id())->get();
 
   return view('materia',
-  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado', 'subs'));
+  compact('c1','c2','c3','c4','profesor', 'lista_profesores', 'lista_monitores', 'calif', 'calificaciones', 'recomendado', 'recomendado2', 'recomendado3', 'recomendado4', 'subs'));
 });
 
 Route::get('monitor/{id}', function ($id) {
