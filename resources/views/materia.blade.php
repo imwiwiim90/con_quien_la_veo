@@ -161,7 +161,7 @@
 @endif
 <ul>
 <?php foreach ($lista_monitores as $l) {
-  echo '<li><a href="/monitor/',$l->id,'" ><h3>',$l->nombre,'</h3></a></li>';
+  echo '<li><a href="/monitor/',$l->id,'" ><h4>',$l->nombre,'</h4></a></li>';
 }  ?></ul>
 
         </div>
