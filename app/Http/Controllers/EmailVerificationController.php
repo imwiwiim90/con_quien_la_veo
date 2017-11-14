@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 use App\Mail\VerificationMail;
 use App\UnverifiedUser;
 use App\User;
 use Validator;
+
 
 // correo no debe estar repetido
 
@@ -25,11 +27,39 @@ class EmailVerificationController extends Controller
             'email' => 'Este campo debe ser un correo válido',
             'min' => 'La contraseña debe ser minimo de 6 digitos',
             'unique' => 'El correo ya está en uso',
+            'not_in' => 'Esta plataforma está destinada únicamente a estudiantes',
         ];
         // validation logic
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|regex:/.*@javeriana\.edu\.co/|unique:users,email',
+            'email' => [
+                'required',
+                'email',
+                'regex:/.*@javeriana\.edu\.co/',
+                'unique:users,email',
+                Rule::notIn([
+                    'efrain.ortiz@javeriana.edu.co',
+                    'angela.carrillo@javeriana.edu.co',
+                    'rueda-andrea@javeriana.edu.co',
+                    'jlopez@javeriana.edu.co',
+                    'cbustaca@javeriana.edu.co',
+                    'gchavarr@javeriana.edu.co',
+                    'florez-l@javeriana.edu.co',
+                    'egonzal@javeriana.edu.co',
+                    'ca.parraa@javeriana.edu.co',
+                    'jpavlich@javeriana.edu.co',
+                    'metorres@javeriana.edu.co',
+                    'mcuriel@javeriana.edu.co',
+                    'eruiz@javeriana.edu.co',
+                    'hhurtado@javeriana.edu.co',
+                    'luisa.barrera@javeriana.edu.co',
+                    'carreno-j@javeriana.edu.co',
+                    'ragonzalez@javeriana.edu.co',
+                    'paez-r@javeriana.edu.co',
+                    'pomares@javeriana.edu.co',
+                    'anmontero@javeriana.edu.co',
+                ]),
+            ],
             'password' => 'required|same:password_confirmation|min:6',
         ],$error_messages);
         // test validation 
@@ -38,6 +68,8 @@ class EmailVerificationController extends Controller
             ->withErrors($validator)
             ->withInput();
         }
+
+
 
     	// find an existing email and delete it
     	$unverifiedUser = UnverifiedUser::where('email',$request->email)->first();
