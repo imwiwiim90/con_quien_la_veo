@@ -197,8 +197,8 @@ $cal->id_usuario=$idusuario;
 
 $cal->save();
 foreach($interesados as $i){
-  $usuario=\App\Usuario::where('id', '=', $i->idest);
-  Mail::to($usuario[0]->email)->send(new VerificationMail($p[0]->nombre,$p[0]->id));
+  $usuario=\App\User::where('id', '=', $i->idest)->get();
+  Mail::to($usuario[0]->email)->send(new \App\Mail\NotificationMail($profesor[0]->nombre,$profesor[0]->id));
 }
 
 

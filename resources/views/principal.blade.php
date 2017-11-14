@@ -31,7 +31,7 @@
 
         @if(count($calificaciones)==0)
         <h2 style="text-align:justify">En esta sección podrás encontrar los últimos
-           comentarios sobre asignaturas de tu interés. Suscribete a alguna
+           comentarios sobre asignaturas de tu interés. Suscríbete a alguna
             asignatura para empezar a ver contenido.<h2>
         <center><p><a class="btn btn-primary btn-lg" href="/asignaturas">Lista de asignaturas</a></p></center>
         @else

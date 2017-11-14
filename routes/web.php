@@ -73,7 +73,7 @@ Route::get('calificar_asignatura/{id}', function ($id) {
   $calif=$ca->where('tipo','=',"materia")->get();
   $profesor= \App\Materia::where('id', '=', $id)->get();
   $interesados= \App\EstudianteMateria::where('idmat','=',$id)->get();
-      return view('calificar_asignatura', compact('profesor', 'calif'));
+      return view('calificar_asignatura', compact('profesor', 'calif', 'interesados'));
 });
 
 Route::post('calificar_asignatura/{id}', function ($id) {
@@ -82,7 +82,7 @@ Route::post('calificar_asignatura/{id}', function ($id) {
   $calif=$ca->where('tipo','=',"materia")->get();
   $profesor= \App\Materia::where('id', '=', $id)->get();
   $interesados= \App\EstudianteMateria::where('idmat','=',$id)->get();
-      return view('calificar_asignatura', compact('profesor', 'calif'));
+      return view('calificar_asignatura', compact('profesor', 'calif', 'interesados'));
 });
 
 Route::get('docente/{id}', function ($id) {
