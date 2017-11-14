@@ -45,7 +45,7 @@
                   </tr>";
                 }
                 if(count($materias)==0){
-                  echo "<h3>No se encontraron resultados de asignaturas.</h3>";
+                  echo "<center><h4>No se encontraron resultados de asignaturas.</h4></center>";
                 }
 
                   ?>
@@ -86,7 +86,7 @@
                 }
                 if(count($profesores)==0){
 
-                  echo "<h3>No se encontraron resultados de docentes.</h3>";
+                  echo "<center><h4>No se encontraron resultados de docentes.</h4></center>";
                 }
 
                   ?>
@@ -126,7 +126,7 @@
                 }
                 if(count($monitores)==0){
 
-                  echo "<h3>No se encontraron resultados de monitores.</h3>";
+                  echo "<center><h4>No se encontraron resultados de monitores.</h4></center>";
                 }
 
                   ?>

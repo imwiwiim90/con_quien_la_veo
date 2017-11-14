@@ -113,25 +113,25 @@
            </table>
 
            <h3>Nivel de complejidad </h3>
-           @if ($c2>=4)<h2 style="color:#c0392b;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Compleja</h2>
-           @elseif ($c2>=3&&$c2<4)<h2 style="color:#e74c3c;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspCompleja</h2>
-           @elseif ($c2>=2&&$c2<3)<h2 style="color:#d35400;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h2>
-           @elseif ($c2>=1&&$c2<2)<h2 style="color:#27ae60;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspSencilla</h2>
-           @elseif ($c2>=0&&$c2<1)<h2 style="color:#2ecc71;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Sencilla</h2>
+           @if ($c2>=4)<h3 style="color:#c0392b;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Compleja</h3>
+           @elseif ($c2>=3&&$c2<4)<h3 style="color:#e74c3c;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspCompleja</h3>
+           @elseif ($c2>=2&&$c2<3)<h3 style="color:#d35400;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h3>
+           @elseif ($c2>=1&&$c2<2)<h3 style="color:#27ae60;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspSencilla</h3>
+           @elseif ($c2>=0&&$c2<1)<h3 style="color:#2ecc71;"><b>{{round($c2, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Sencilla</h3>
            @endif
 
            <h3>Nivel de exigencia </h3>
-           @if ($c4>=4)<h2 style="color:#c0392b;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Exigente</h2>
-           @elseif ($c4>=3&&$c4<4)<h2 style="color:#e74c3c;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspExigente</h2>
-           @elseif ($c4>=2&&$c4<3)<h2 style="color:#d35400;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h2>
-           @elseif ($c4>=0&&$c4<2)<h2 style="color:#27ae60;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspPoco exigente</h2>
+           @if ($c4>=4)<h3 style="color:#c0392b;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Exigente</h3>
+           @elseif ($c4>=3&&$c4<4)<h3 style="color:#e74c3c;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspExigente</h3>
+           @elseif ($c4>=2&&$c4<3)<h3 style="color:#d35400;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspRegular</h3>
+           @elseif ($c4>=0&&$c4<2)<h3 style="color:#27ae60;"><b>{{round($c4, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspPoco exigente</h3>
            @endif
 
            <h3>Nota promedio</h3>
-           @if ($c3>=4)<h2 style="color:#27ae60;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Alta</h2>
-           @elseif ($c3>=4&&$c3<4)<h2 style="color:#d35400;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspAlta</h2>
-           @elseif ($c3>=2&&$c3<3)<h2 style="color:#e74c3c;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspBaja</h2>
-           @elseif ($c3>=0&&$c3<2)<h2 style="color:#c0392b;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy baja</h2>
+           @if ($c3>=4)<h3 style="color:#27ae60;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy Alta</h3>
+           @elseif ($c3>=4&&$c3<4)<h3 style="color:#d35400;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspAlta</h3>
+           @elseif ($c3>=2&&$c3<3)<h3 style="color:#e74c3c;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspBaja</h3>
+           @elseif ($c3>=0&&$c3<2)<h3 style="color:#c0392b;"><b>{{round($c3, 1, PHP_ROUND_HALF_UP)}}/5</b>&nbsp&nbspMuy baja</h3>
            @endif
 
         </div>
@@ -143,7 +143,7 @@
 <center><h2>Profesores</h2></center>
 <ul>
 <?php foreach ($lista_profesores as $l) {
-  echo '<li><a href="/docente/',$l->id,'" ><h3>',$l->nombre,'</h3></a></li>';
+  echo '<li><a href="/docente/',$l->id,'" ><h4>',$l->nombre,'</h4></a></li>';
 }  ?></ul>
 
 
@@ -157,7 +157,7 @@
 <center><h2>Monitores</h2></center>
 
 @if(count($lista_monitores)==0)
-<h3>No hay monitores registrados para esta asignatura</h3>
+<center><h4>No hay monitores registrados para esta asignatura</h4></center>
 @endif
 <ul>
 <?php foreach ($lista_monitores as $l) {
@@ -193,7 +193,7 @@
 </div>
 <div class="jumbotron">
 
-<center><h3>Recomendación de Profesores</h3></center><br>
+<center><h3><b>Recomendación de Profesores</b></h3></center><br>
 
 <table class="table" >
         <tbody id="perfil_usuario">
@@ -233,7 +233,7 @@
       @if(count($calificaciones)==0)
         <br><center><h3>No se han registrado calificaciones</h3></center>
       @else
-        <br><center><h3>Comentarios</h3></center><br>
+        <br><center><h3><b>Comentarios</b></h3></center><br>
       @endif
 
    <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
@@ -256,18 +256,18 @@
     <blockquote class="card-blockquote"><p>',$c->comentario,'</p>
     <footer style="color:black;"><i>',$nombre_usuario[0]->name,' -  ',$c->updated_at->format("d-m-Y"),
     '</i> &nbsp&nbsp&nbsp<img src=',URL::asset("imgs/up.png"),' WIDTH=25>',
-    $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_a/',$c->id,'/',Auth::id() ,'"><h4>';
+    $c->valoracion,'<a  class="btn btn-primary" style="float:right; padding:5px" href="/like_a/',$c->id,'/',Auth::id() ,'"><h5>';
 
     $x= \App\Megusta::where('id_comentario', '=', $c->id)->where('id_usuario', '=', Auth::id())->get();
 
 
     if(count($x)==0){
 
-    echo'Me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+    echo'Me gusta</h5></a></blockquote</footer></div></div></td></tr>';
    }
 
     else{
-      echo'Ya no me gusta</h4></a></blockquote</footer></div></div></td></tr>';
+      echo'Ya no me gusta</h5></a></blockquote</footer></div></div></td></tr>';
     }
 
     }

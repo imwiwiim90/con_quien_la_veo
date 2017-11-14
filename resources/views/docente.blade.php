@@ -36,7 +36,7 @@
 
   <?php
 foreach ($profesor as $p) {
-echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
+echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3><br>";
 }
   ?>
 
@@ -126,7 +126,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 
 
    <tr>
-   <td><h4>Objetividad en la calificación</h4>
+   <td><h4>Recomendación General</h4>
 
    <table>
  <tbody >
@@ -211,7 +211,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 
    </tr>
    <tr>
-   <td><h4>Justicia en el nivel de exigencia</h4><table>
+   <td><h4>Objetividad en la calificación</h4><table>
  <tbody >
 
  <tr>
@@ -292,7 +292,7 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
     </table></td>
    </tr>
    <tr>
-   <td><h4>Calidad de la enseñanza</h4><table>
+   <td><h4>Justicia en el nivel de exigencia</h4><table>
  <tbody >
 
  <tr>
@@ -372,21 +372,27 @@ echo "<td><h1>",$p->nombre,"</h1><h3>Departamento de ",$p->departamento,"</h3>";
 
  </tbody>
     </table></td>
+
+
    </tr>
+
+  <tr>
+<td><h4>Calidad en la enseñanza</h4>
+<tbody></tbody>
 
    <tr>
 
    @if(count($calificaciones)==0)
-     <td><br><h3>No se han registrado calificaciones</h3></td>
+     <td><br><h4>No se han registrado calificaciones</h4></td>
    @else
-     <td><br><h3>Calificaciones registradas: {{count($calificaciones)}} </h3></td>
+     <td><br><h4>Calificaciones registradas: {{count($calificaciones)}} </h4></td>
    @endif
 
    </tr>
 
  </tbody>
     </table>
-
+  
 
 
 
@@ -413,7 +419,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 </tr>
 <tr>
 
-  <td><center><h3>Asignaturas dictadas</h3></center></td>
+  <td><center><h3>Asignaturas dictadas:</h3></center></td>
 
 </tr>
 
@@ -423,7 +429,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
 
     <?php
   foreach ($lista_materias as $l) {
-  echo '<a href="/asignatura/',$l->id,'" ><h4>',$l->nombre,'</h4></a>';
+  echo '<a href="/asignatura/',$l->id,'" ><center><h4>',$l->nombre,'</h4></center></a>';
 
   }
     ?>
@@ -452,7 +458,7 @@ echo '<td align="right"><img  class=img-responsive img-rounded WIDTH=350  style=
    @if(count($calificaciones)==0)
 
    @else
-     <center><h3>Comentarios</h3></center><br>
+     <center><h3><b>Comentarios</b></h3></center><br>
    @endif
 
 <script type= "text/javascript" src="{{ URL::asset('js/tab_divider.js') }}"></script>
