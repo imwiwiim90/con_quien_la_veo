@@ -195,7 +195,7 @@
 
 <center><h3><b>Recomendación de Profesores</b></h3></center><br>
 
-@if(recomendado->id!=null)
+@if($recomendado->id!=null)
 <table class="table" >
         <tbody id="recomendaciones">
 
