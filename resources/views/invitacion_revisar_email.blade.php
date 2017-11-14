@@ -24,7 +24,7 @@
          <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <br>
-                <h3 style="text-align: center; font-size: calc(100% + 0.95vw);" >Gracias por subscribirte! Solo necesitamos verificar que en realidad seas tu. Ingresa a tu correo y haz click en el link indicado.</h2>
+                <h3 style="text-align: center; font-size: calc(100% + 0.95vw);" >Gracias por subscribirte! Solo necesitamos verificar que en realidad seas tú. Ingresa a tu correo y haz click en el link indicado.</h2>
             </div>
           </div>
       </div>

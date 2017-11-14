@@ -32,7 +32,7 @@ class NotificationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('NotificationMail')->with([
+        return $this->view('notificationMail')->with([
             'nombre' => $this->nombre_materia,
             'id' => $this->id_materia,
         ])->subject('Nueva calificación en '.$this->nombre_materia);

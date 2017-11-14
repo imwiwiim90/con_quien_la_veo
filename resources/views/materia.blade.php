@@ -195,8 +195,9 @@
 
 <center><h3><b>Recomendación de Profesores</b></h3></center><br>
 
+@if(recomendado->id!=null)
 <table class="table" >
-        <tbody id="perfil_usuario">
+        <tbody id="recomendaciones">
 
           <tr>
           <td><center><h4>Recomendación General</h4></center></td>
@@ -224,6 +225,9 @@
 
         </tbody>
 </table>
+@else
+<center><h4>Hasta el momento no se han realizado calificaciones suficientes para recomendarte profesores para esta asignatura.</h4></center>
+@endif
 
 
 </div>

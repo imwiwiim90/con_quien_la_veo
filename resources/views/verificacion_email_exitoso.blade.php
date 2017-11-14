@@ -23,7 +23,7 @@
          <div class="row">
             <div class="col-xs-6">
                 <br>
-                <h3 style="text-align: justify; font-size: calc(100% + 0.95vw);" >Felicitaciones! Ahora tienes acceso a nuestra aplicación. Ahora solo debes iniciar sesión para poder ingresar</h2>
+                <h3 style="text-align: justify; font-size: calc(100% + 0.95vw);" >¡Felicitaciones! Ahora tienes acceso a nuestra aplicación. Ahora solo debes iniciar sesión para poder ingresar</h2>
 
             </div>
             <div class="col-xs-6">
