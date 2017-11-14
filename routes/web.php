@@ -207,9 +207,19 @@ Route::get('monitor/{id}', function ($id) {
 
 Route::get('/miperfil', function () {
     $user = Auth::user();
-    $materias_est = \App\EstudianteMateria::all();
+    $materias_est = \App\EstudianteMateria::where('idest', '=', $user->id)->get();
     $materias = \App\Materia::all();
     return view('perfil_usuario', compact ('user', 'materias_est', 'materias'));
+});
+
+Route::get('/editarperfil', function(){
+  $user = Auth::user();
+  return view('editar_perfil', compact('user'));
+});
+
+Route::post('/editarperfil', function(){
+  $user = Auth::user();
+  return view('editar_perfil', compact('user'));
 });
 
 Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');
