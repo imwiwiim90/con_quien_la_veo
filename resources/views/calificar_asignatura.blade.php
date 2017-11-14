@@ -68,22 +68,67 @@ echo "<center><h1>Calificación de ",$p->nombre,"</h1><h3>Dictada por el Departa
   <option value="5.0" <?php if(count($calif)!=0){if($calif[0]->c2==5.0){echo "selected";}} ?>>5.0</option>
 </select><br>
 
-<label for="c3">Aproximadamente, ¿Qué nota obtuvo en la asignatura?</label>
+<label for="c3">¿Qué nota obtuvo en la asignatura?</label>
 <select class="form-control" id="c3" name="c3">
   <option value="0.0" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.0</option>
+  <option value="0.1" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.1</option>
+  <option value="0.2" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.2</option>
+  <option value="0.3" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.3</option>
+  <option value="0.4" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.4</option>
   <option value="0.5" <?php if(count($calif)!=0){if($calif[0]->c3==0.5){echo "selected";}} ?>>0.5</option>
+  <option value="0.6" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.6</option>
+  <option value="0.7" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.7</option>
+  <option value="0.8" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.8</option>
+  <option value="0.9" <?php if(count($calif)!=0){if($calif[0]->c3==0.0){echo "selected";}} ?>>0.9</option>
+
   <option value="1.0" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.0</option>
-  <option value="1.5" <?php if(count($calif)!=0){if($calif[0]->c3==1.5){echo "selected";}} ?>>1.5</option>
+  <option value="1.1" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.1</option>
+  <option value="1.2" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.2</option>
+  <option value="1.3" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.3</option>
+  <option value="1.4" <?php if(count($calif)!=0){if($calif[0]->c3==1.5){echo "selected";}} ?>>1.4</option>
+  <option value="1.5" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.5</option>
+  <option value="1.6" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.6</option>
+  <option value="1.7" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.7</option>
+  <option value="1.8" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.8</option>
+  <option value="1.9" <?php if(count($calif)!=0){if($calif[0]->c3==1.0){echo "selected";}} ?>>1.9</option>
+
   <option value="2.0" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.0</option>
+  <option value="2.1" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.1</option>
+  <option value="2.2" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.2</option>
+  <option value="2.3" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.3</option>
+  <option value="2.4" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.4</option>
   <option value="2.5" <?php if(count($calif)!=0){if($calif[0]->c3==2.5){echo "selected";}} ?>>2.5</option>
+  <option value="2.6" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.6</option>
+  <option value="2.7" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.7</option>
+  <option value="2.8" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.8</option>
+  <option value="2.9" <?php if(count($calif)!=0){if($calif[0]->c3==2.0){echo "selected";}} ?>>2.9</option>
+
   <option value="3.0" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.0</option>
+  <option value="3.1" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.1</option>
+  <option value="3.2" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.2</option>
+  <option value="3.3" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.3</option>
+  <option value="3.4" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.4</option>
   <option value="3.5" <?php if(count($calif)!=0){if($calif[0]->c3==3.5){echo "selected";}} ?>>3.5</option>
+  <option value="3.6" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.6</option>
+  <option value="3.7" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.7</option>
+  <option value="3.8" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.8</option>
+  <option value="3.9" <?php if(count($calif)!=0){if($calif[0]->c3==3.0){echo "selected";}} ?>>3.9</option>
+
   <option value="4.0" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.0</option>
+  <option value="4.1" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.1</option>
+  <option value="4.2" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.2</option>
+  <option value="4.3" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.3</option>
+  <option value="4.4" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.4</option>
   <option value="4.5" <?php if(count($calif)!=0){if($calif[0]->c3==4.5){echo "selected";}} ?>>4.5</option>
+  <option value="4.6" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.6</option>
+  <option value="4.7" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.7</option>
+  <option value="4.8" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.8</option>
+  <option value="4.9" <?php if(count($calif)!=0){if($calif[0]->c3==4.0){echo "selected";}} ?>>4.9</option>
+
   <option value="5.0" <?php if(count($calif)!=0){if($calif[0]->c3==5.0){echo "selected";}} ?>>5.0</option>
 </select><br>
 
-<label for="c4">¿Qué tanto es el nivel de exigencia de la asignatura?</label>
+<label for="c4">¿Qué tan alto es el nivel de exigencia de la asignatura?</label>
 <select class="form-control" id="c4" name="c4">
   <option value="0.0" <?php if(count($calif)!=0){if($calif[0]->c4==0.0){echo "selected";}} ?>>0.0</option>
   <option value="0.5" <?php if(count($calif)!=0){if($calif[0]->c4==0.5){echo "selected";}} ?>>0.5</option>
@@ -109,7 +154,7 @@ echo "<center><h1>Calificación de ",$p->nombre,"</h1><h3>Dictada por el Departa
   </button>
 </div>
 <div class="col-xs-6">
-  <a class="btn btn-primary  btn-block" href="/monitor/{{ Request::route('id') }}" >
+  <a class="btn btn-primary  btn-block" href="/asignatura/{{ Request::route('id') }}" >
       Cancelar
   </a>
 </div>
@@ -151,6 +196,12 @@ $cal->valoracion=0;
 $cal->id_usuario=$idusuario;
 
 $cal->save();
+foreach($interesados as $i){
+  $usuario=\App\Usuario::where('id', '=', $i->idest);
+  Mail::to($usuario[0]->email)->send(new VerificationMail($p[0]->nombre,$p[0]->id));
+}
+
+
 }
 else{
   $calif[0]->c1=$c1;

@@ -72,6 +72,7 @@ Route::get('calificar_asignatura/{id}', function ($id) {
   $ca=$c->where('id_calificado','=',$id);
   $calif=$ca->where('tipo','=',"materia")->get();
   $profesor= \App\Materia::where('id', '=', $id)->get();
+  $interesados= \App\EstudianteMateria::where('idmat','=',$id)->get();
       return view('calificar_asignatura', compact('profesor', 'calif'));
 });
 
@@ -80,6 +81,7 @@ Route::post('calificar_asignatura/{id}', function ($id) {
   $ca=$c->where('id_calificado','=',$id);
   $calif=$ca->where('tipo','=',"materia")->get();
   $profesor= \App\Materia::where('id', '=', $id)->get();
+  $interesados= \App\EstudianteMateria::where('idmat','=',$id)->get();
       return view('calificar_asignatura', compact('profesor', 'calif'));
 });
 
@@ -205,9 +207,19 @@ Route::get('monitor/{id}', function ($id) {
 
 Route::get('/miperfil', function () {
     $user = Auth::user();
-    $materias_est = \App\EstudianteMateria::all();
+    $materias_est = \App\EstudianteMateria::where('idest', '=', $user->id)->get();
     $materias = \App\Materia::all();
     return view('perfil_usuario', compact ('user', 'materias_est', 'materias'));
+});
+
+Route::get('/editarperfil', function(){
+  $user = Auth::user();
+  return view('editar_perfil', compact('user'));
+});
+
+Route::post('/editarperfil', function(){
+  $user = Auth::user();
+  return view('editar_perfil', compact('user'));
 });
 
 Route::get('/like_p/{idc}/{idu}', 'LikeController@like_p');
